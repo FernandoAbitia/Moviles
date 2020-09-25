@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#020829"
+    tools:context=".MainActivity">
+
+    //ABITIA ROJO ENDHIR FERNANDO
+
+    <ImageView
+        android:id="@+id/tierra"
+        android:layout_width="28dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="115dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_tierra" />//YA
+
+    <ImageView
+        android:id="@+id/marte"
+        android:layout_width="24dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="143dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_marte" />//YA
+
+
+    <ImageView
+        android:id="@+id/jupiter"
+        android:layout_width="49dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="185dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_jupiter" />//YA
+
+    <ImageView
+        android:id="@+id/mercurio"
+        android:layout_width="11dp"
+        android:layout_height="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="65dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_mercurio" />//YA
+
+    <ImageView
+        android:id="@+id/neptuno"
+        android:layout_width="37dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="258dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="330dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_neptuno" />//YA
+
+    <ImageView
+        android:id="@+id/saturno"
+        android:layout_width="60dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="136dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="235dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_saturno" />//YA
+
+    <ImageView
+        android:id="@+id/sol"
+        android:layout_width="109dp"
+        android:layout_height="113dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_sun" />//NA
+
+    <ImageView
+        android:id="@+id/urano"
+        android:layout_width="44dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="201dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="280dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_urano" />//YA
+
+    <ImageView
+        android:id="@+id/venus"
+        android:layout_width="20dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/sol"
+        app:layout_constraintCircle="@id/sol"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="87dp"
+        app:layout_constraintEnd_toEndOf="@+id/sol"
+        app:layout_constraintStart_toStartOf="@+id/sol"
+        app:srcCompat="@drawable/ic_venus" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:text="SISTEMA SOLAR - ENDHIR FERNANDO ABITIA ROJO"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />//YA
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
