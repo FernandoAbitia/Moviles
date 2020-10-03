@@ -1,184 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Telefono"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/personPhone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:hint="Escriba su telefono"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Edad"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personPhone" />
-
-    <EditText
-        android:id="@+id/personAge"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:ems="10"
-        android:hint="Escriba su edad"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <Switch
-        android:id="@+id/switch_habilitar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:checked="false"
-        android:text="Habilitar HD"
-        app:layout_constraintStart_toStartOf="@+id/personAge"
-        app:layout_constraintTop_toBottomOf="@+id/personAge" />
-
-    <TextView
-        android:id="@+id/text_habilitar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Estado"
-        app:layout_constraintBottom_toBottomOf="@+id/switch_habilitar"
-        app:layout_constraintStart_toEndOf="@+id/switch_habilitar"
-        app:layout_constraintTop_toTopOf="@+id/switch_habilitar" />
-
-    <CheckBox
-        android:id="@+id/chkJazz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Jazz"
-        app:layout_constraintStart_toStartOf="@+id/switch_habilitar"
-        app:layout_constraintTop_toBottomOf="@+id/switch_habilitar" />
-
-    <CheckBox
-        android:id="@+id/chkSalsa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Salsa"
-        app:layout_constraintStart_toStartOf="@+id/chkJazz"
-        app:layout_constraintTop_toBottomOf="@+id/chkJazz" />
-
-    <CheckBox
-        android:id="@+id/chkCountry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Country"
-        app:layout_constraintStart_toStartOf="@+id/chkSalsa"
-        app:layout_constraintTop_toBottomOf="@+id/chkSalsa" />
-
-    <TextView
-        android:id="@+id/text_generos"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/chkCountry"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/chkSalsa"
-        app:layout_constraintTop_toTopOf="@+id/chkJazz" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/chkSalsa"
-        app:layout_constraintTop_toBottomOf="@+id/chkCountry">
-
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Telefono"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/personPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:hint="Escriba su telefono"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Edad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personPhone" />
+
+        <EditText
+            android:id="@+id/personAge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:ems="10"
+            android:hint="Escriba su edad"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Switch
+            android:id="@+id/switch_habilitar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:checked="false"
-            android:text="Radio 1" />
+            android:text="Habilitar HD"
+            app:layout_constraintStart_toStartOf="@+id/personAge"
+            app:layout_constraintTop_toBottomOf="@+id/personAge" />
 
-        <RadioButton
-            android:id="@+id/radio2"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_habilitar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Radio 2" />
+            android:layout_marginStart="8dp"
+            android:text="Estado"
+            app:layout_constraintBottom_toBottomOf="@+id/switch_habilitar"
+            app:layout_constraintStart_toEndOf="@+id/switch_habilitar"
+            app:layout_constraintTop_toTopOf="@+id/switch_habilitar" />
 
-        <RadioButton
-            android:id="@+id/radio3"
-            android:layout_width="match_parent"
+        <CheckBox
+            android:id="@+id/chkJazz"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Radio 3" />
-    </RadioGroup>
+            android:layout_marginTop="8dp"
+            android:text="Jazz"
+            app:layout_constraintStart_toStartOf="@+id/switch_habilitar"
+            app:layout_constraintTop_toBottomOf="@+id/switch_habilitar" />
 
-    <TextView
-        android:id="@+id/textRadio"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioGroup"
-        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+        <CheckBox
+            android:id="@+id/chkSalsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Salsa"
+            app:layout_constraintStart_toStartOf="@+id/chkJazz"
+            app:layout_constraintTop_toBottomOf="@+id/chkJazz" />
 
-    <Button
-        android:id="@+id/button_toast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Mostrar Toast"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        <CheckBox
+            android:id="@+id/chkCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Country"
+            app:layout_constraintStart_toStartOf="@+id/chkSalsa"
+            app:layout_constraintTop_toBottomOf="@+id/chkSalsa" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabActionDialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_blog" />
+        <TextView
+            android:id="@+id/text_generos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/chkCountry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/chkSalsa"
+            app:layout_constraintTop_toTopOf="@+id/chkJazz" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabCalendario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:layout_constraintBottom_toTopOf="@+id/fabActionDialog"
-        app:layout_constraintEnd_toEndOf="@+id/fabActionDialog"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="@+id/fabActionDialog"
-        app:srcCompat="@drawable/ic_calendario" />
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/chkSalsa"
+            app:layout_constraintTop_toBottomOf="@+id/chkCountry">
 
+            <RadioButton
+                android:id="@+id/radio1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Radio 1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioButton
+                android:id="@+id/radio2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Radio 2" />
+
+            <RadioButton
+                android:id="@+id/radio3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Radio 3" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textRadio"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/radioGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioGroup"
+            app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+
+        <Button
+            android:id="@+id/button_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:text="Mostrar Toast"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabActionDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_blog" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabCalendario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@+id/fabActionDialog"
+            app:layout_constraintEnd_toEndOf="@+id/fabActionDialog"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="@+id/fabActionDialog"
+            app:srcCompat="@drawable/ic_calendario" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

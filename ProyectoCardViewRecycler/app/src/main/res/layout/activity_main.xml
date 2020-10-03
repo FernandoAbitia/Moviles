@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="PROYECTO CARD VIEW Y RECYCLER"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="ABITIA ROJO ENDHIR FERNANDO"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextEdad"
+        android:layout_width="114dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Edad"
+        android:inputType="number"
+        android:maxLength="2"
+        app:layout_constraintStart_toStartOf="@+id/editTextNombre"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextEdad"
+        app:layout_constraintStart_toEndOf="@+id/editTextEdad"
+        app:layout_constraintTop_toTopOf="@+id/editTextEdad">
+
+        <RadioButton
+            android:id="@+id/rbHombre"
+            android:layout_width="match_parent"
+            android:layout_height="21dp"
+            android:checked="true"
+            android:text="Hombre"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rbMujer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mujer"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switchFrecuente"
+        android:layout_width="116dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:text="Viajero frecuente"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextMail"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextMail"
+        app:layout_constraintTop_toTopOf="@+id/editTextMail"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextMail"
+        android:layout_width="272dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textAllCaps="true"
+        app:layout_constraintStart_toStartOf="@+id/editTextEdad"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEdad" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:hint="Teléfono"
+        android:inputType="phone"
+        android:maxLength="10"
+        app:layout_constraintBottom_toBottomOf="@+id/radioGroupGenero"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNombre"
+        app:layout_constraintStart_toEndOf="@+id/radioGroupGenero"
+        app:layout_constraintTop_toTopOf="@+id/radioGroupGenero" />
+
+    <CheckBox
+        android:id="@+id/checkFinlandia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Finlandia"
+        app:layout_constraintStart_toStartOf="@+id/editTextMail"
+        app:layout_constraintTop_toBottomOf="@+id/textDestinos" />
+
+    <CheckBox
+        android:id="@+id/checkChina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="China"
+        app:layout_constraintBottom_toBottomOf="@+id/checkFinlandia"
+        app:layout_constraintStart_toEndOf="@+id/checkFinlandia"
+        app:layout_constraintTop_toTopOf="@+id/checkFinlandia"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/checkNoruega"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:text="Noruega"
+        app:layout_constraintBottom_toBottomOf="@+id/checkChina"
+        app:layout_constraintEnd_toEndOf="@+id/switchFrecuente"
+        app:layout_constraintStart_toEndOf="@+id/checkChina"
+        app:layout_constraintTop_toTopOf="@+id/checkChina"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/checkMexico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="México"
+        app:layout_constraintBottom_toBottomOf="@+id/checkLondres"
+        app:layout_constraintEnd_toEndOf="@+id/checkNoruega"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/checkLondres"
+        app:layout_constraintTop_toTopOf="@+id/checkLondres"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/checkLondres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:text="Londres"
+        app:layout_constraintBottom_toBottomOf="@+id/checkUSA"
+        app:layout_constraintStart_toEndOf="@+id/checkUSA"
+        app:layout_constraintTop_toTopOf="@+id/checkUSA"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/checkUSA"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="USA"
+        app:layout_constraintStart_toStartOf="@+id/checkFinlandia"
+        app:layout_constraintTop_toBottomOf="@+id/checkFinlandia" />
+
+    <TextView
+        android:id="@+id/textDestinos"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:text="DESTINOS TURÍSTICOS A VISITAR"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMail" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDestinos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/checkMexico"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/checkUSA"
+        app:layout_constraintTop_toBottomOf="@+id/checkLondres" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabReporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_expediente" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
