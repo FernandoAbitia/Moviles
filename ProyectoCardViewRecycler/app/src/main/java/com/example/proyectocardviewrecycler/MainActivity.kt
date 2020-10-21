@@ -42,10 +42,7 @@ class MainActivity : AppCompatActivity() {
         checkLondres = findViewById(R.id.checkLondres)
         checkMexico = findViewById(R.id.checkMexico)
         fabReporte = findViewById(R.id.fabReporte)
-        if (findViewById<RadioButton>(R.id.rbHombre).isChecked)
-            radioGenero = findViewById(R.id.rbHombre)
-        else
-            radioGenero = findViewById(R.id.rbMujer)
+        radioGenero = findViewById(R.id.rbHombre)
 
         checkFinlandia.setOnCheckedChangeListener(checkBoxCheck)
         checkChina.setOnCheckedChangeListener(checkBoxCheck)
@@ -53,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         checkUSA.setOnCheckedChangeListener(checkBoxCheck)
         checkLondres.setOnCheckedChangeListener(checkBoxCheck)
         checkMexico.setOnCheckedChangeListener(checkBoxCheck)
+        radioGenero.setOnCheckedChangeListener(radioCheck)
         fabReporte.setOnClickListener(fabClick)
 
     }
@@ -66,6 +64,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter=destinoAdapter
 
         destinoAdapter.notifyDataSetChanged()
+    }
+
+    private val radioCheck = CompoundButton.OnCheckedChangeListener { radio, checked ->
+
+        if (findViewById<RadioButton>(R.id.rbHombre).isChecked)
+            radioGenero = findViewById(R.id.rbHombre)
+        else
+            radioGenero = findViewById(R.id.rbMujer)
     }
 
     private val fabClick = View.OnClickListener { fab ->
