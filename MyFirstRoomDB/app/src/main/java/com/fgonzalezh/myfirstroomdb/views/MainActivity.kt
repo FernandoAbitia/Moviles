@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.fgonzalez.myfirstroomdb.interfaces.BottomDialogListener
 import com.fgonzalezh.myfirstroomdb.R
 import com.fgonzalezh.myfirstroomdb.adapters.ContentAdapter
 import com.fgonzalezh.myfirstroomdb.viewmodels.MainActivityViewModel
@@ -13,14 +14,23 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val fabAdd = findViewById<FloatingActionButton>(R.id.fab_add_contact)
+
         fabAdd.setOnClickListener {
             val intent = Intent(this, ActivityAddContact::class.java)
             startActivity(intent)
+        }
+
+        val bottomDialogListener = object: BottomDialogListener {
+            override fun onClick(contentId: Long) {
+                val bottomSheetDialogFragmentFavorites = BottomSheetDialogFragmentFavorites(contentId)
+                bottomSheetDialogFragmentFavorites.show(supportFragmentManager,"dialogFragment")
+            }
         }
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_contacts)
@@ -28,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel : MainActivityViewModel by viewModels()
         viewModel.getContents().observe(this, { contents ->
-            val contentAdapter = ContentAdapter(contents)
+            val contentAdapter = ContentAdapter(contents, bottomDialogListener)
 
             recyclerView.adapter = contentAdapter
 

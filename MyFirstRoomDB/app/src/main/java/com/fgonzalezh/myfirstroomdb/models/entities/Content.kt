@@ -11,12 +11,11 @@ data class Content (
     val lastName: String,
     val age: Int
 ){
-    override fun equals(other: Any?): Boolean {
-        if (other is Content){
-            val otherObj = other as Content
+    var fullName = "$name $lastName"
 
-            return otherObj.id==this.id
-        }
+    override fun equals(other: Any?): Boolean {
+        if (other is Content)
+            return other.id==this.id
         return false
     }
 }

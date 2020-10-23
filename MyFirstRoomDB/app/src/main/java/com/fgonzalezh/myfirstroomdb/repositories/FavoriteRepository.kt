@@ -7,10 +7,14 @@ import com.fgonzalezh.myfirstroomdb.models.roomdb.ContentDB
 class FavoriteRepository(context: Context) {
 
     private val contentDB = ContentDB.getInstance(context)
-    private val contentDAO = contentDB.favoriteDAO()
+    private val favoriteDAO = contentDB.favoriteDAO()
 
     suspend fun insertFavorite(favorite: Favorite){
-        contentDAO.insert(favorite)
+        favoriteDAO.insert(favorite)
+    }
+
+    suspend fun deleteFavorite(favorite: Favorite){
+        favoriteDAO.deleteFavorite(favorite)
     }
 
 }

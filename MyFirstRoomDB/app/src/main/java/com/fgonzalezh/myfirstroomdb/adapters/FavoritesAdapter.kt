@@ -29,7 +29,9 @@ class FavoritesAdapter(private val favorites: List<Content>) : RecyclerView.Adap
         fun onBind(favorite: Content) {
             val checkboxFavorite = view.findViewById<CheckBox>(R.id.checkBox_favorite)
 
-            checkboxFavorite.setOnCheckedChangeListener{button, checked ->
+            checkboxFavorite.text = "${favorite.name} ${favorite.lastName}"
+
+            checkboxFavorite.setOnCheckedChangeListener{ _, checked ->
                 if (checked){
                     favoriteSelected.add(favorite)
                 }else{

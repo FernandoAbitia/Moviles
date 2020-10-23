@@ -16,6 +16,7 @@ import com.google.android.material.button.MaterialButton
 class ActivityAddContact : AppCompatActivity() {
 
     private val activityAddContactViewModel: ActivityAddContactViewModel by viewModels()
+    private var favoritesAdapter: FavoritesAdapter?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,10 +26,10 @@ class ActivityAddContact : AppCompatActivity() {
         recyclerViewFavorites.layoutManager = LinearLayoutManager(this)
 
         activityAddContactViewModel.getAllContent().observe(this, {contents ->
-            val favoritesAdapter = FavoritesAdapter(contents)
+            favoritesAdapter = FavoritesAdapter(contents)
             recyclerViewFavorites.adapter = favoritesAdapter
 
-            favoritesAdapter.notifyDataSetChanged()
+            favoritesAdapter?.notifyDataSetChanged()
         })
 
         val  buttonSave = findViewById<MaterialButton>(R.id.button_save)
@@ -43,17 +44,19 @@ class ActivityAddContact : AppCompatActivity() {
                 age = age
             )
 
-            activityAddContactViewModel.insertContent(content).observe(
-                this, {succesful ->
-                    if (succesful){
-                    Toast.makeText(this,"Guardado exitoso", Toast.LENGTH_LONG).show()
-                    finish()
-                    }else{
-                        Toast.makeText(this,"No se pudo guardar", Toast.LENGTH_LONG).show()
-                    }
-                }
-            )
+            val listFavorites: List<Content> = favoritesAdapter?.favoriteSelected ?: emptyList()
+
+            activityAddContactViewModel.insertContent(content,listFavorites)
         }
+
+        activityAddContactViewModel.notifyInsertContent().observe(this,{ succesful ->
+            if (succesful){
+                Toast.makeText(this,"Guardado exitoso", Toast.LENGTH_LONG).show()
+                finish()
+            }else{
+                Toast.makeText(this,"No se pudo guardar", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 
 }

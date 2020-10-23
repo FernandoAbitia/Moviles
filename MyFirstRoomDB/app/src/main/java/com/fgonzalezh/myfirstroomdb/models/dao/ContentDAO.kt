@@ -19,4 +19,7 @@ abstract class ContentDAO {
     @Query("SELECT * FROM Content")
     abstract suspend fun getAllContentSync() : List<Content>
 
+    @Query("SELECT * FROM Content WHERE id IN (:ids)")
+    abstract suspend fun getAllContentByIds(ids: List<Long>): List<Content>
+
 }
