@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="character"
+            type="com.rockbass2560.rickandmortyapp.models.Results" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        android:elevation="5dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#08FFD600">
+
+            <TextView
+                android:id="@+id/textview_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{character.name}"
+                android:textColor="#3F51B5"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewCharacter"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.508" />
+
+            <ImageView
+                android:id="@+id/imageViewCharacter"
+                imageUrl="@{character.image}"
+                android:layout_width="77dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
