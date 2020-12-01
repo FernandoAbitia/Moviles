@@ -19,6 +19,7 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -27,7 +28,8 @@ import java.util.concurrent.Executors
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var buttonCamera: Button
+    private var camera = 0
+    private lateinit var buttonCamera: ImageView
     private val REQUEST_CAMERA = 10
     private val executorCamera = Executors.newSingleThreadExecutor()
 
@@ -44,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     ) {
         if (requestCode == REQUEST_CAMERA){
             if (grantResults.contains(PackageManager.PERMISSION_GRANTED)){
-                configCamera(0)
+                configCamera(camera)
             }else{
                 Toast.makeText(this, "PERMISO NO ACEPTADO", Toast.LENGTH_LONG).show()
             }
@@ -57,11 +59,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         surfaceView = findViewById(R.id.surface_preview)
-        buttonCamera = findViewById(R.id.buttonCamera)
+        buttonCamera = findViewById(R.id.imgToggleCamera)
         buttonCamera.setOnClickListener(buttonCameraClick)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
-            configCamera(0)
+            configCamera(camera)
         }else{
             ActivityCompat.requestPermissions(
                 this,
@@ -71,9 +73,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    @SuppressLint("MissingPermission")
     private val buttonCameraClick = View.OnClickListener { Button ->
-
-        surfaceView.holder.surface.release()
 
         if (this::captureSession.isInitialized){
             captureSession.close()
@@ -82,7 +83,12 @@ class MainActivity : AppCompatActivity() {
         if (this::cameraDevice.isInitialized)
             cameraDevice.close()
 
-        configCamera(1)
+        when (camera) {
+            1 -> camera=0
+            0 -> camera=1
+        }
+        val cameraManager = getSystemService(CAMERA_SERVICE) as CameraManager
+        cameraManager.openCamera(camera.toString(), cameraStateCallback, null)
     }
 
     @SuppressLint("MissingPermission")
@@ -99,7 +105,6 @@ class MainActivity : AppCompatActivity() {
 
             override fun surfaceDestroyed(p0: SurfaceHolder) { }
         })
-
     }
     private val cameraStateCallback = object : CameraDevice.StateCallback() {
         override fun onOpened(camera: CameraDevice) {

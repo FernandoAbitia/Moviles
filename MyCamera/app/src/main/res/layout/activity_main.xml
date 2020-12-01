@@ -22,14 +22,15 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/surface_preview">
 
-        <Button
-            android:id="@+id/buttonCamera"
+        <ImageView
+            android:id="@+id/imgToggleCamera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Toggle camera" />
+            app:srcCompat="@drawable/ic_girar_camara" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
